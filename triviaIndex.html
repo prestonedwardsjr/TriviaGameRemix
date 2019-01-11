@@ -12,7 +12,7 @@
         <h1>New Orleans Saints Trivia</h1>
   <h2>Test your New Orleans Saints knowledge.  You will be given two minutes to see if you are a true WhoDat, Ready when you are.</h2>
     <button id=start type="button" class="btn btn-primary">Start</button>
-
+<div id="time"></div>
 
   </div> 
 </body>
@@ -21,6 +21,8 @@
 
   $("#start").on("click",function(){
 $(this).hide();
+// Display initial time countdown
+$("#time").html("<h2>Time Remaining: 120 Seconds</h2>" + "<br>");
   });
   
 </script>
