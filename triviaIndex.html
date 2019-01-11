@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Saints Trivia Game</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  
 </head>
 <body>
     <div class="container"> 
@@ -16,65 +17,13 @@
 <div id="question0"></div>
 <div id="answer1"></div>
 <div id="submit"></div>
+<!-- Results -->
+<div id="resultsMessage"></div>
+<div id="correct"></div>
+<div id="incorrect"></div>
 
   </div> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="main.js" ></script>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript">
-var timer =20;
-var intervalId;
-var correct= 0;
-var incorrect=0;
-var questions = [{
-  question: " What year did The Saints win the SuperBowl?",
-  answerList: [1972,1989,2006,2009, ],
-  answer: 3
-},];
-  $("#start").on("click",function(){
-$(this).hide();
-// Display initial time countdown
-$("#time").html("<h2>Time Remaining: 120 Seconds</h2>" + "<br>");
-// Start Timer Countdown
-run();
-// Question 1
-  
-$("#question0").html
-  ("<h3>" + questions[0].question + "</h3>");
-  $("#answer1").html
-  ("<input type='radio' name='answer1' value='0'>" + "<label>" + questions[0].answerList[0] + "</label>"
-   + "<input type='radio' name='answer1' value='1'>" + "<label>" + questions[0].answerList[1] + "</label>"
-   + "<input type='radio' name='answer1' value='2'>" + "<label>" + questions[0].answerList[2] + "</label>"
-   + "<input type='radio' name='answer1' value='3'>" + "<label>" + questions[0].answerList[3] + "</label><br><br>");
-// Done button
-
-$("#submit").html("<button id='done' type='button' class='btn btn-primary'>Done</button>");
-});
-
-// Timer countdown function
-function run() {
-
-clearInterval(intervalId);
-intervalId = setInterval(decrement, 1000);
-}
-function decrement() {
-
-//  Decrease timer by one.
-timer--;
-
-//  Show the timer in the #time tag
-$("#time").html("<h2>Time Remaining: " + timer+ " Seconds</h2>" + "<br>");
-
-if (timer === 0) {
-
-  // Run stop function to stop timer countdown
-  stop();
-}
-}
-function stop() {
-
-//  Clears intervalId
-clearInterval(intervalId);
-}  
-  
-</script>
 </html>
