@@ -18,12 +18,41 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
-
+timer =2;
+var intervalId;
   $("#start").on("click",function(){
 $(this).hide();
 // Display initial time countdown
 $("#time").html("<h2>Time Remaining: 120 Seconds</h2>" + "<br>");
-  });
+// Start Timer Countdown
+run();
+});
+
+// Timer countdown function
+function run() {
+
+clearInterval(intervalId);
+intervalId = setInterval(decrement, 1000);
+}
+function decrement() {
+
+//  Decrease timer by one.
+timer--;
+
+//  Show the timer in the #time tag
+$("#time").html("<h2>Time Remaining: " + timer+ " Seconds</h2>" + "<br>");
+
+if (timer === 0) {
+
+  // Run stop function to stop timer countdown
+  stop();
+}
+}
+function stop() {
+
+//  Clears intervalId
+clearInterval(intervalId);
+}  
   
 </script>
 </html>
