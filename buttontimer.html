@@ -13,41 +13,19 @@
   <h2>Test your New Orleans Saints knowledge.  You will be given two minutes to see if you are a true WhoDat, Ready when you are.</h2>
     <button id=start type="button" class="btn btn-primary">Start</button>
 <div id="time"></div>
-<div id="question0"></div>
-<div id="answer1"></div>
-<div id="submit"></div>
-
+<div=questions0></div>
   </div> 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
-var timer =20;
+timer =2;
 var intervalId;
-var correct= 0;
-var incorrect=0;
-var questions = [{
-  question: " What year did The Saints win the SuperBowl?",
-  answerList: [1972,1989,2006,2009, ],
-  answer: 3
-},];
   $("#start").on("click",function(){
 $(this).hide();
 // Display initial time countdown
 $("#time").html("<h2>Time Remaining: 120 Seconds</h2>" + "<br>");
 // Start Timer Countdown
 run();
-// Question 1
-  
-$("#question0").html
-  ("<h3>" + questions[0].question + "</h3>");
-  $("#answer1").html
-  ("<input type='radio' name='answer1' value='0'>" + "<label>" + questions[0].answerList[0] + "</label>"
-   + "<input type='radio' name='answer1' value='1'>" + "<label>" + questions[0].answerList[1] + "</label>"
-   + "<input type='radio' name='answer1' value='2'>" + "<label>" + questions[0].answerList[2] + "</label>"
-   + "<input type='radio' name='answer1' value='3'>" + "<label>" + questions[0].answerList[3] + "</label><br><br>");
-// Done button
-
-$("#submit").html("<button id='done' type='button' class='btn btn-primary'>Done</button>");
 });
 
 // Timer countdown function
